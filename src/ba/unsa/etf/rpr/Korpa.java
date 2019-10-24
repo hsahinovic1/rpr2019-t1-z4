@@ -13,11 +13,13 @@ public class Korpa {
         this.korpa[i]=artikl;
         saldo=saldo+artikl.getCijena();}
     public double dajUkupnuCijenuArtikala(){return this.saldo;};
-    public void izbaciArtiklSaKodom(int kod){
+    public Artikl izbaciArtiklSaKodom(int kod){
+        Artikl artikl=null;
         for(int i=0; i<50;i++){
             if(korpa[i].kod==kod)
+                artikl=korpa[i];
             korpa[i]=null;
         }
-
+        return artikl;
     }
 }

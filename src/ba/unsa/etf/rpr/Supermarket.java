@@ -12,11 +12,13 @@ public class Supermarket {
         }
         this.supermarket[i]=artikl;
         }
-    public void izbaciArtiklSaKodom(int kod){
+    public Artikl izbaciArtiklSaKodom(int kod){
+        Artikl artikl=null;
         for(int i=0; i<50;i++){
             if(supermarket[i].kod==kod)
+                artikl=supermarket[i];
                 supermarket[i]=null;
         }
-
+        return artikl;
     }
 }
