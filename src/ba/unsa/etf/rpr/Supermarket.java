@@ -4,13 +4,15 @@ public class Supermarket {
     Artikl[] supermarket= new Artikl[1000];
 
     public Artikl[] getArtikli(){ return this.supermarket;}
-    public void dodajArtikl(Artikl artikl){
+    public boolean dodajArtikl(Artikl artikl){
         int i;
         for ( i=0;i<50;i++) {
             if (supermarket[i] == null)
                 break;
+                return false;
         }
         this.supermarket[i]=artikl;
+        return true;
         }
     public Artikl izbaciArtiklSaKodom(int kod){
         Artikl artikl=null;
