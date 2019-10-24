@@ -14,10 +14,10 @@ public class Supermarket {
         this.supermarket[i]=artikl;
         return true;
         }
-    public Artikl izbaciArtiklSaKodom(int kod){
+    public Artikl izbaciArtiklSaKodom(String kod){
         Artikl artikl=null;
         for(int i=0; i<50;i++){
-            if(supermarket[i].kod==kod)
+            if(supermarket[i].kod.equals(kod))
                 artikl=supermarket[i];
                 supermarket[i]=null;
         }
