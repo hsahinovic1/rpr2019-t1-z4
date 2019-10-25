@@ -13,15 +13,20 @@ public class Korpa {
         }
         this.korpa[i]=artikl;
         saldo=saldo+artikl.getCijena();
-        return true;}
-    public int dajUkupnuCijenuArtikala(){return this.saldo;};
+        return true;
+    }
+
+    public int dajUkupnuCijenuArtikala(){ return this.saldo;}
+
     public Artikl izbaciArtiklSaKodom(String kod){
         Artikl artikl=null;
         for(int i=0; i<50;i++){
             if(korpa[i].kod.equals(kod))
                 artikl=korpa[i];
             korpa[i]=null;
+            saldo=saldo-artikl.getCijena();
+            return artikl;
         }
-        return artikl;
+        return null;
     }
 }

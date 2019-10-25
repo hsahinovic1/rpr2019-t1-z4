@@ -7,12 +7,14 @@ public class Supermarket {
     public boolean dodajArtikl(Artikl artikl){
         int i;
         for ( i=0;i<50;i++) {
-            if (supermarket[i] == null)
-                break;
-                return false;
+            if (supermarket[i] == null) {
+                this.supermarket[i]=artikl;
+                return true;
+            }
+
         }
-        this.supermarket[i]=artikl;
-        return true;
+
+        return false;
         }
     public Artikl izbaciArtiklSaKodom(String kod){
         Artikl artikl=null;
@@ -20,7 +22,8 @@ public class Supermarket {
             if(supermarket[i].kod.equals(kod))
                 artikl=supermarket[i];
                 supermarket[i]=null;
+            return artikl;
         }
-        return artikl;
+        return null;
     }
 }
