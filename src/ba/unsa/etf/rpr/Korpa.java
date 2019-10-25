@@ -5,15 +5,16 @@ public class Korpa {
     int saldo=0;
     public Artikl[] getArtikli(){ return this.korpa;}
     public boolean dodajArtikl(Artikl artikl){
-        int i;
-        for ( i=0;i<50;i++) {
-            if (korpa[i] == null)
-                break;
-            return false;
+        for (int i=0;i<50;i++) {
+            if (korpa[i] == null){
+                this.korpa[i]=artikl;
+                saldo=saldo+artikl.getCijena();
+                return true;
+            }
+
         }
-        this.korpa[i]=artikl;
-        saldo=saldo+artikl.getCijena();
-        return true;
+
+        return false;
     }
 
     public int dajUkupnuCijenuArtikala(){ return this.saldo;}
